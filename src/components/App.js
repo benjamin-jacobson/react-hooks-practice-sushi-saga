@@ -58,6 +58,10 @@ function App() {
     }
   }
 
+  function handleAddMoney(moreMoney) {
+    setWallet((wallet) => wallet + moreMoney);
+  }
+
   const eatenSushis = sushis.filter((sushi) => sushi.eaten);
 
   return (
@@ -65,7 +69,7 @@ function App() {
       <SushiContainer 
         sushis={sushis} 
         onEatSushi={handleEatSushi}/>
-      <Table wallet={wallet} plates={eatenSushis}/>
+      <Table wallet={wallet}  onAddMoney={handleAddMoney} plates={eatenSushis}/>
     </div>
   );
 }

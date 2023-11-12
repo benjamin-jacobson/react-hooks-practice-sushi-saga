@@ -1,6 +1,7 @@
 import React from "react";
+import SushiWallet from "./SushiWallet";
 
-function Table({ wallet, plates = [] }) {
+function Table({ wallet, onAddMoney,plates = [] }) {
   // renders an empty plate for every element in the array
   const emptyPlates = plates.map((_, index) => (
     <div key={index} className="empty-plate" style={{ top: -7 * index }} />
@@ -13,6 +14,7 @@ function Table({ wallet, plates = [] }) {
       </h1>
       <div className="table">
         <div className="stack">{emptyPlates}</div>
+        <SushiWallet onAddMoney={onAddMoney} />
       </div>
     </>
   );
